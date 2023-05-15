@@ -1,0 +1,6 @@
+@inproceedings{wu2023describe3d,
+  title={High-fidelity 3D Face Generation from Natural Language Descriptions},
+  author={Wu, Menghua and Zhu, Hao and Huang, Linjia and Zhuang, Yiyu and Lu, Yuanxun and Cao, Xun},
+  booktitle={Proceedings of IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2023}
+}
