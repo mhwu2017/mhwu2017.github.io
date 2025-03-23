@@ -1,138 +1,120 @@
-<script src="http://www.google.com/jsapi" type="text/javascript"></script> 
-<script type="text/javascript">google.load("jquery", "1.3.2");</script>
-
-<style type="text/css">
-    body {
-        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-        font-weight:300;
-        font-size:18px;
-        margin-left: auto;
-        margin-right: auto;
-        width: 1100px;
-    }
-    
-    h1 {
-        font-size:32px;
-        font-weight:300;
-    }
-    
-    .disclaimerbox {
-        background-color: #eee;		
-        border: 1px solid #eeeeee;
-        border-radius: 10px ;
-        -moz-border-radius: 10px ;
-        -webkit-border-radius: 10px ;
-        padding: 20px;
-    }
-
-    video.header-vid {
-        height: 140px;
-        border: 1px solid black;
-        border-radius: 10px ;
-        -moz-border-radius: 10px ;
-        -webkit-border-radius: 10px ;
-    }
-    
-    img.header-img {
-        height: 140px;
-        border: 1px solid black;
-        border-radius: 10px ;
-        -moz-border-radius: 10px ;
-        -webkit-border-radius: 10px ;
-    }
-    
-    img.rounded {
-        border: 1px solid #eeeeee;
-        border-radius: 10px ;
-        -moz-border-radius: 10px ;
-        -webkit-border-radius: 10px ;
-    }
-    
-    a:link,a:visited
-    {
-        color: #1367a7;
-        text-decoration: none;
-    }
-    a:hover {
-        color: #208799;
-    }
-    
-    td.dl-link {
-        height: 160px;
-        text-align: center;
-        font-size: 22px;
-    }
-    
-    .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
-        box-shadow:
-        0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
-        5px 5px 0 0px #fff, /* The second layer */
-        5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
-        10px 10px 0 0px #fff, /* The third layer */
-        10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
-        15px 15px 0 0px #fff, /* The fourth layer */
-        15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
-        20px 20px 0 0px #fff, /* The fifth layer */
-        20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
-        25px 25px 0 0px #fff, /* The fifth layer */
-        25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
-        margin-left: 10px;
-        margin-right: 45px;
-    }
-
-    .paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
-        box-shadow:
-        0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
-
-        margin-left: 10px;
-        margin-right: 45px;
-    }
-
-
-    .layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
-        box-shadow:
-        0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
-        5px 5px 0 0px #fff, /* The second layer */
-        5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
-        10px 10px 0 0px #fff, /* The third layer */
-        10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
-        margin-top: 5px;
-        margin-left: 10px;
-        margin-right: 30px;
-        margin-bottom: 5px;
-    }
-    
-    .vert-cent {
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-    
-    hr
-    {
-        border: 0;
-        height: 1px;
-        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-    }
-</style>
-
+<!DOCTYPE html>
 <html>
+
 <head>
     <title>High-fidelity 3D Face Generation from Natural Language Descriptions</title>
-    <meta property="og:image" content="Path to my teaser.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
+    <meta property="og:image" content="Path to my teaser.png" />
     <meta property="og:title" content="Creative and Descriptive Paper Title." />
     <meta property="og:description" content="Paper description." />
-
-    <!-- Get from Google Analytics -->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src=""></script> 
+    <script async src=""></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
 
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
         gtag('config', 'UA-75863369-6');
     </script>
+    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+    <script type="text/javascript">
+        google.load("jquery", "1.3.2");
+    </script>
+    <style type="text/css">
+        body {
+            font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+            font-weight: 300;
+            font-size: 18px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 1100px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 300;
+        }
+
+        .disclaimerbox {
+            background-color: #eee;
+            border: 1px solid #eeeeee;
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            padding: 20px;
+        }
+
+        video.header-vid {
+            height: 140px;
+            border: 1px solid black;
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+        }
+
+        img.header-img {
+            height: 140px;
+            border: 1px solid black;
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+        }
+
+        img.rounded {
+            border: 1px solid #eeeeee;
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+        }
+
+        a:link,
+        a:visited {
+            color: #1367a7;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #208799;
+        }
+
+        td.dl-link {
+            height: 160px;
+            text-align: center;
+            font-size: 22px;
+        }
+
+        .layered-paper-big {
+            box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.35), 5px 5px 0 0px #fff, 5px 5px 1px 1px rgba(0, 0, 0, 0.35), 10px 10px 0 0px #fff, 10px 10px 1px 1px rgba(0, 0, 0, 0.35), 15px 15px 0 0px #fff, 15px 15px 1px 1px rgba(0, 0, 0, 0.35), 20px 20px 0 0px #fff, 20px 20px 1px 1px rgba(0, 0, 0, 0.35), 25px 25px 0 0px #fff, 25px 25px 1px 1px rgba(0, 0, 0, 0.35);
+            margin-left: 10px;
+            margin-right: 45px;
+        }
+
+        .paper-big {
+            box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.35);
+            margin-left: 10px;
+            margin-right: 45px;
+        }
+
+        .layered-paper {
+            box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.35), 5px 5px 0 0px #fff, 5px 5px 1px 1px rgba(0, 0, 0, 0.35), 10px 10px 0 0px #fff, 10px 10px 1px 1px rgba(0, 0, 0, 0.35);
+            margin-top: 5px;
+            margin-left: 10px;
+            margin-right: 30px;
+            margin-bottom: 5px;
+        }
+
+        .vert-cent {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+        }
+    </style>
 </head>
 
 <body>
@@ -196,7 +178,7 @@
             <tr>
                 <td width=260px>
                     <center>
-                        <img class="rounded" style="width:500px" src="./resources/teaser.png"/>
+                        <img class="rounded" style="width:500px" src="./resources/teaser.png" />
                     </center>
                 </td>
             </tr>
@@ -206,31 +188,21 @@
     <hr>
 
     <table align=center width=850px>
-        <center><h1>Abstract</h1></center>
+        <center>
+            <h1>Abstract</h1>
+        </center>
         <tr>
             <td>
-                Synthesizing high-quality 3D face models from natural language descriptions is very valuable for many applications, including avatar creation, virtual reality, and telepresence. However, little research ever tapped into this task. We argue the major obstacle lies in 1) the lack of highquality 3D face data with descriptive text annotation, and 2) the complex mapping relationship between descriptive language space and shape/appearance space. To solve these problems, we build DESCRIBE3D dataset, the first large-scale dataset with fine-grained text descriptions for text-to-3D face generation task. Then we propose a twostage framework to first generate a 3D face that matches the concrete descriptions, then optimize the parameters in the 3D shape and texture space with abstract description to refine the 3D face model. Extensive experimental results show that our method can produce a faithful 3D face that conforms to the input descriptions with higher accuracy and quality than previous methods. 
+                Synthesizing high-quality 3D face models from natural language descriptions is very valuable for many applications, including avatar creation, virtual reality, and telepresence. However, little research ever tapped into this task. We argue the major obstacle lies in 1) the lack of highquality 3D face data with descriptive text annotation, and 2) the complex mapping relationship between descriptive language space and shape/appearance space. To solve these problems, we build DESCRIBE3D dataset, the first large-scale dataset with fine-grained text descriptions for text-to-3D face generation task. Then we propose a twostage framework to first generate a 3D face that matches the concrete descriptions, then optimize the parameters in the 3D shape and texture space with abstract description to refine the 3D face model. Extensive experimental results show that our method can produce a faithful 3D face that conforms to the input descriptions with higher accuracy and quality than previous methods.
             </td>
         </tr>
     </table>
 
     <hr>
 
-    <center><h1>Dataset</h1></center>
-    <table align=center width=850px>
-        <tr>
-            <td>
-                <p>We introduce the DESCRIBE3D dataset, the first large-scale dataset with fine-grained text descriptions tailored for the text-to-3D face generation task. This dataset aims to address the scarcity of high-quality 3D face data with descriptive text annotations, which is a significant hurdle in the field.</p>
-                <p>The DESCRIBE3D dataset provides a rich collection of 3D face models paired with detailed natural language descriptions, enabling more accurate and realistic 3D face generation from text inputs.</p>
-                <p><b>License:</b> To use the DESCRIBE3D dataset, you need to agree to our <a href="./resources/Describe3D_Dataset_License_Agreement.docx">License</a>.</p>
-                <p><b>Download:</b> You can access the DESCRIBE3D dataset on Google Drive at <a href="https://drive.google.com/file/d/1vmGCJFMAqqeH3aNNqSu3ZHxJs1FZbVBp/view?usp=drive_link">https://drive.google.com/file/d/1vmGCJFMAqqeH3aNNqSu3ZHxJs1FZbVBp/view?usp=drive_link</a>.</p>
-            </td>
-        </tr>
-    </table>
-
-    <hr>
-
-    <center><h1>Pipeline</h1></center>
+    <center>
+        <h1>Pipeline</h1>
+    </center>
 
     <table align=center width=420px>
         <center>
@@ -244,7 +216,7 @@
         <tr>
             <td align=center width=400px>
                 <center>
-                    <td><img class="rounded" style="width:900px" src="./resources/fig_pipeline.png"/></td>
+                    <td><img class="rounded" style="width:900px" src="./resources/fig_pipeline.png" /></td>
                 </center>
             </td>
         </tr>
@@ -255,14 +227,32 @@
                 <td align=center>
                     Overview of our pipeline
                 </td>
-
             </tr>
         </center>
     </table>
 
     <hr>
 
-    <center><h1>Result</h1></center>
+
+	<center>
+        <h1>Dataset</h1>
+    </center>
+    <table align=center width=850px>
+        <tr>
+            <td>
+                <p>We introduce the DESCRIBE3D dataset, the first large-scale dataset with fine-grained text descriptions tailored for the text-to-3D face generation task. This dataset aims to address the scarcity of high-quality 3D face data with descriptive text annotations, which is a significant hurdle in the field.</p>
+                <p>The DESCRIBE3D dataset provides a rich collection of 3D face models paired with detailed natural language descriptions, enabling more accurate and realistic 3D face generation from text inputs.</p>
+                <p><b>License:</b> To use the DESCRIBE3D dataset, you need to agree to our <a href="./LICENSE">License</a>. Please sign the License and send the signed PDF to <a href="mailto:nju3dv@nju.edu.cn">nju3dv@nju.edu.cn</a>.</p>
+                <p><b>Download:</b> After that, you can access the DESCRIBE3D dataset on Google Drive at <a href="https://drive.google.com/file/d/1vmGCJFMAqqeH3aNNqSu3ZHxJs1FZbVBp/view?usp=drive_link">https://drive.google.com/file/d/1vmGCJFMAqqeH3aNNqSu3ZHxJs1FZbVBp/view?usp=drive_link</a>.</p>
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <center>
+        <h1>Result</h1>
+    </center>
 
     <table align=center width=420px>
         <center>
@@ -276,7 +266,7 @@
         <tr>
             <td align=center width=400px>
                 <center>
-                    <td><img class="rounded" style="width:900px" src="./resources/fig_visual_new.png"/></td>
+                    <td><img class="rounded" style="width:900px" src="./resources/fig_visual_new.png" /></td>
                 </center>
             </td>
         </tr>
@@ -287,7 +277,6 @@
                 <td align=center>
                     Visual Result
                 </td>
-
             </tr>
         </center>
     </table>
@@ -295,17 +284,19 @@
     <br>
     <hr>
     <table align=center width=450px>
-        <center><h1>Paper and Supplementary Material</h1></center>
+        <center>
+            <h1>Paper and Supplementary Material</h1>
+        </center>
         <tr>
-            <td><a href=""><img class="layered-paper-big" style="height:175px" src="./resources/paper.png"/></a></td>
+            <td><a href=""><img class="layered-paper-big" style="height:175px" src="./resources/paper.png" /></a></td>
             <td><span style="font-size:14pt"><br>
-                <b>High-fidelity 3D Face Generation from Natural Language Descriptions</b><br>
-                In Conference on Computer Vision and Pattern Recognition, 2023.<br>
-                (hosted on <a href="">ArXiv</a>)<br>
-                <!-- (<a href="./resources/CameraReady.pdf">camera ready</a>)<br> -->
-                <span style="font-size:4pt"><a href=""><br></a>
-                </span>
-            </td>
+                    <b>High-fidelity 3D Face Generation from Natural Language Descriptions</b><br>
+                    In Conference on Computer Vision and Pattern Recognition, 2023.<br>
+                    (hosted on <a href="">ArXiv</a>)<br>
+                    <!-- (<a href="./resources/CameraReady.pdf">camera ready</a>)<br> -->
+                    <span style="font-size:4pt"><a href=""><br></a>
+                    </span>
+                </td>
         </tr>
     </table>
     <br>
@@ -313,8 +304,8 @@
     <table align=center width=600px>
         <tr>
             <td><span style="font-size:14pt"><center>
-                <a href="./resources/bibtex.txt">[Bibtex]</a>
-            </center></td>
+                        <a href="./resources/bibtex.txt">[Bibtex]</a>
+                    </center></td>
         </tr>
     </table>
 
@@ -325,15 +316,16 @@
         <tr>
             <td width=400px>
                 <left>
-                    <center><h1>Acknowledgements</h1></center>
-                    This work was supported by the NSFC
-grant 62001213, 62025108, and gift funding from Huawei
-Research and Tencent Rhino-Bird Research Program.
+                    <center>
+                        <h1>Acknowledgements</h1>
+                    </center>
+                    This work was supported by the NSFC grant 62001213, 62025108, and gift funding from Huawei Research and Tencent Rhino - Bird Research Program.
                 </left>
             </td>
         </tr>
     </table>
 
-<br>
+    <br>
 </body>
+
 </html>
